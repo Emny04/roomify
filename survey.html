@@ -60,45 +60,78 @@
               </div>
             </div>
           </div>
-          <form id="surveyForm">
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey</title>
+</head>
+<body>
+    <form id="surveyForm">
+        <!-- Personal Information Section -->
+        <div class="step" id="step1">
+            <h2>Step 1: Personal Information</h2>
+            <label for="firstName">First Name:</label>
+            <input placeholder="Jonh" type="text" name="firstName" id="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input placeholder="Brown" type="text" name="lastName" id="lastName" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{10}" placeholder="1234567890" required>
+
+            <label for="email">Email:</label>
+            <input placeholder="example@gmail.com" type="email" name="email" id="email" required>
+
+            <button type="button" onclick="nextStep(1)">Next</button>
+        </div>
+        
+        <!-- Preferences Section -->
+        <div class="step" id="step2">
+            <h2>Step 2: Preferences</h2>
             <!-- Bed size input -->
-            <select name="bedSize">
+            <label for="bedSize">Bed Size:</label>
+            <select name="bedSize" id="bedSize">
                 <option value="Queen">Queen</option>
                 <option value="King">King</option>
             </select>
-        
+            
             <!-- TV input -->
-            <input type="checkbox" name="hasTV">
-        
+            <label for="hasTV">Do You Need a TV?</label>
+            <input type="checkbox" name="hasTV" id="hasTV">
+            
             <!-- Budget input -->
             <label for="budget">Budget:</label>
             <input type="number" name="budget" id="budget" placeholder="Enter your budget">
-        
+            
             <!-- Theme input -->
-            <select name="theme">
+            <label for="theme">Choose Theme:</label>
+            <select name="theme" id="theme">
                 <option value="Black">Black</option>
                 <option value="White">White</option>
             </select>
-        
+
             <button type="submit">Submit</button>
-        </form>
-        
-    
+        </div>
+    </form>
+
     <script>
-        document.getElementById('surveyForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            var formData = new FormData(this);
-            
-            fetch('/survey/submit', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(images => {
-                // Display the images based on the filenames you get from the backend.
-            });
-        });
+        let currentStep = 1;
+
+        function nextStep(step) {
+            const currentStepDiv = document.getElementById(`step${step}`);
+            const nextStepDiv = document.getElementById(`step${step + 1}`);
+            if (currentStepDiv && nextStepDiv) {
+                currentStepDiv.style.display = 'none';
+                nextStepDiv.style.display = 'block';
+                currentStep = step + 1;
+            }
+        }
+
+        // Initially, show the first step
+        document.getElementById('step1').style.display = 'block';
     </script>
     <div class="home-section-separator3"></div>
     <div class="home-footer-container">
