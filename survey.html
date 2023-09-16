@@ -1,3 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div>
+        <link href="/css/home.css" rel="stylesheet" />
+        <div class="home-container">
+          <div data-role="Header" class="home-navbar-container">
+            <div class="home-navbar">
+              <div class="home-left-side">
+                <img
+                  alt="image"
+                  src="https://play.teleporthq.io/static/svg/default-img.svg"
+                  class="home-image"
+                />
+                <div data-role="BurgerMenu" class="home-burger-menu">
+                  <svg viewBox="0 0 1024 1024" class="home-icon">
+                    <path
+                      d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="home-right-side">
+                <a href="survey.html" class="home-cta-btn Anchor button">START NOW</a>
+            </div>
+              <div data-role="MobileMenu" class="home-mobile-menu">
+                <div class="home-container1">
+                  <img
+                    alt="image"
+                    src="image1.png"
+                    class="home-image1"
+                  />
+
+                  <div data-role="CloseMobileMenu" class="home-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="home-icon02">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form id="surveyForm">
+            <!-- Bed size input -->
+            <select name="bedSize">
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+        
+            <!-- TV input -->
+            <input type="checkbox" name="hasTV">
+        
+            <!-- Budget input -->
+            <label for="budget">Budget:</label>
+            <input type="number" name="budget" id="budget" placeholder="Enter your budget">
+        
+            <!-- Theme input -->
+            <select name="theme">
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+            </select>
+        
+            <button type="submit">Submit</button>
+        </form>
+        
+    
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch('/survey/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(images => {
+                // Display the images based on the filenames you get from the backend.
+            });
+        });
+    </script>
+</body>
+
 </html>
