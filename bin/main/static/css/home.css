@@ -607,9 +607,6 @@
     flex-direction: column;
     background-color: var(--dl-color-gray-900);
   }
-  img {
-    border-radius: 50%;
-  }
   .home-icon22 {
     width: 48px;
     height: 48px;
