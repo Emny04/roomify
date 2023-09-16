@@ -481,14 +481,7 @@
     color: var(--dl-color-gray-700);
     text-align: center;
   }
-  .home-cards-container1 {
-    width: 100%;
-    display: flex;
-    max-width: var(--dl-size-size-maxcontent);
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+
   .home-service-card {
     width: 30%;
     display: flex;
@@ -584,14 +577,6 @@
     color: var(--dl-color-gray-700);
     text-align: center;
   }
-  .home-cards-container2 {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .home-team-card {
     display: flex;
     padding: var(--dl-space-space-fourunits);
@@ -633,7 +618,7 @@
     border-radius: var(--dl-radius-radius-round);
     margin-bottom: var(--dl-space-space-tripleunit);
     flex-direction: column;
-    background-color: var(--dl-color-gray-900);
+    background-color: transparent;
   }
   .home-icon24 {
     width: 48px;
@@ -672,7 +657,6 @@
   }
   .home-team-card3 {
     display: flex;
-    padding: var(--dl-space-space-fourunits);
     align-items: center;
     flex-direction: column;
   }
@@ -683,7 +667,8 @@
     border-radius: var(--dl-radius-radius-round);
     margin-bottom: var(--dl-space-space-tripleunit);
     flex-direction: column;
-    background-color: var(--dl-color-gray-900);
+    background-color: transparent;
+
   }
   .home-icon28 {
     width: 48px;
@@ -708,7 +693,7 @@
     border-radius: var(--dl-radius-radius-round);
     margin-bottom: var(--dl-space-space-tripleunit);
     flex-direction: column;
-    background-color: var(--dl-color-gray-900);
+    background-color: transparent;
   }
   .home-icon30 {
     width: 48px;
@@ -745,14 +730,6 @@
   .home-text19 {
     color: var(--dl-color-gray-700);
     text-align: center;
-  }
-  .home-cards-container3 {
-    width: 100%;
-    display: flex;
-    margin-top: var(--dl-space-space-doubleunit);
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: space-between;
   }
   .home-left-section {
     width: 50%;
@@ -1387,12 +1364,6 @@
     .home-hero-text {
       width: 80%;
     }
-    .home-cards-container2 {
-      justify-content: center;
-    }
-    .home-cards-container3 {
-      flex-direction: column;
-    }
     .home-left-section {
       width: 100%;
       margin-right: 0px;
@@ -1457,11 +1428,6 @@
     .home-heading-container1 {
       width: 100%;
     }
-    .home-cards-container1 {
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-    }
     .home-service-card {
       width: 65%;
       margin-bottom: var(--dl-space-space-fourunits);
@@ -1478,10 +1444,6 @@
     }
     .home-heading-container3 {
       width: 100%;
-    }
-    .home-cards-container3 {
-      align-items: center;
-      flex-direction: column;
     }
     .home-content-container6 {
       width: 100%;
@@ -1562,18 +1524,6 @@
     }
     .home-video {
       height: 200px;
-    }
-    .home-card {
-      width: 100%;
-    }
-    .home-card1 {
-      width: 100%;
-    }
-    .home-card2 {
-      width: 100%;
-    }
-    .home-card3 {
-      width: 100%;
     }
     .home-content-container6 {
       padding-left: 0px;
