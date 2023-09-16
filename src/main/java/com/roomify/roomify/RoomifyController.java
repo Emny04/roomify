@@ -23,7 +23,7 @@ public class RoomifyController {
 		List<String> images = new ArrayList<>();
 
 		// Just as an example
-		if ("Queen".equals(response.getBedSize()) && response.isHasTV()) {
+		if ("Queen".equals(response.getBedSize()) && response.isHasTV() && (response.getBudget()>1000 && response.getBudget()<5000)) {
 			images.add("image1.jpg");
 			images.add("image2.jpg");
 		}
