@@ -1,0 +1,11 @@
+:root {
+    --main-color: #FFE8D5;
+  }
+  
+  body {
+    background-color: var(--main-color);
+  }
+  h1{
+    text-align: center;
+  }
+  
