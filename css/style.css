@@ -32,7 +32,9 @@
     white-space: nowrap; /* Prevent images from wrapping to the next line */
     animation: roll 10s linear infinite; /* Adjust animation duration as needed */
 }
-
+.idm{
+  display: none;
+}
 .picture-container img {
     width: 200px; /* Adjust image width as needed */
     height: auto;

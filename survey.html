@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
+
+
 <body>
-    <div>
-        <link href="/css/home.css" rel="stylesheet" />
-        <div class="home-container">
-          <div data-role="Header" class="home-navbar-container">
+    <div class="home-container">
+        <div data-role="Header" class="home-navbar-container">
             <div class="home-navbar">
               <div class="home-left-side">
                 <img
@@ -60,79 +65,36 @@
               </div>
             </div>
           </div>
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Survey</title>
-</head>
-<body>
-    <form id="surveyForm">
-        <!-- Personal Information Section -->
-        <div class="step" id="step1">
-            <h2>Step 1: Personal Information</h2>
-            <label for="firstName">First Name:</label>
-            <input placeholder="Jonh" type="text" name="firstName" id="firstName" required>
+          <img class="idm" id="lol" src="images/image1.png" alt="Chosen bed image">
+          <img class="idm" id="lol1" src="images/image2.png" alt="Chosen bed image">
 
-            <label for="lastName">Last Name:</label>
-            <input placeholder="Brown" type="text" name="lastName" id="lastName" required>
-
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{10}" placeholder="1234567890" required>
-
-            <label for="email">Email:</label>
-            <input placeholder="example@gmail.com" type="email" name="email" id="email" required>
-
-            <button type="button" onclick="nextStep(1)">Next</button>
-        </div>
+  <form id="surveyForm">
+    <div class="step" id="step2">
+        <h2>Step 2: Preferences</h2>
         
-        <!-- Preferences Section -->
-        <div class="step" id="step2">
-            <h2>Step 2: Preferences</h2>
-            <!-- Bed size input -->
-            <label for="bedSize">Bed Size:</label>
-            <select name="bedSize" id="bedSize">
-                <option value="Queen">Queen</option>
-                <option value="King">King</option>
-            </select>
-            
-            <!-- TV input -->
-            <label for="hasTV">Do You Need a TV?</label>
-            <input type="checkbox" name="hasTV" id="hasTV">
-            
-            <!-- Budget input -->
-            <label for="budget">Budget:</label>
-            <input type="number" name="budget" id="budget" placeholder="Enter your budget">
-            
-            <!-- Theme input -->
-            <label for="theme">Choose Theme:</label>
-            <select name="theme" id="theme">
-                <option value="Black">Black</option>
-                <option value="White">White</option>
-            </select>
+        <!-- Bed size input -->
+        <label for="bedSize">Bed Size:</label>
+        <select name="bedSize" id="bedSize">
+            <option value="Queen">Queen</option>
+            <option value="King">King</option>
+        </select>
+        
+        <!-- Budget input -->
+        <label for="budget">Budget:</label>
+        <input type="number" name="budget" id="budget" placeholder="Enter your budget">
+        
+        <!-- Theme input -->
+        <label for="theme">Choose Theme:</label>
+        <select name="theme" id="theme">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+        </select>
 
-            <button type="submit">Submit</button>
-        </div>
-    </form>
+        <button type="submit">Submit</button>
+    </div>
+</form>
 
-    <script>
-        let currentStep = 1;
-
-        function nextStep(step) {
-            const currentStepDiv = document.getElementById(`step${step}`);
-            const nextStepDiv = document.getElementById(`step${step + 1}`);
-            if (currentStepDiv && nextStepDiv) {
-                currentStepDiv.style.display = 'none';
-                nextStepDiv.style.display = 'block';
-                currentStep = step + 1;
-            }
-        }
-
-        // Initially, show the first step
-        document.getElementById('step1').style.display = 'block';
-    </script>
+    <img id="selectedImage" src="" alt="Chosen bed image">
     <div class="home-section-separator3"></div>
     <div class="home-footer-container">
       <div class="home-footer">
@@ -157,5 +119,43 @@
   </div>
 </div>
 </body>
+<script>
+  const imgElement = document.getElementById('selectedImage');
+  const params = getQueryParams();
+  const imagePath = determineImageToShow(params);
+  imgElement.src = imagePath;
+  var img = document.getElementById("lol");
+  let currentStep = 1;
 
+  function nextStep(step) {
+      const currentStepDiv = document.getElementById(`step${step}`);
+      const nextStepDiv = document.getElementById(`step${step + 1}`);
+      if (currentStepDiv && nextStepDiv) {
+          currentStepDiv.style.display = 'none';
+          nextStepDiv.style.display = 'block';
+          currentStep = step + 1;
+      }
+  }
+
+  // Initially, show the first step
+  document.getElementById('step1').style.display = 'block';
+
+  function getQueryParams() {
+    let queryParams = {};
+    window.location.search.substring(1).split('&').forEach(function(param) {
+      const [key, value] = param.split('=');
+      queryParams[key] = decodeURIComponent(value);
+    });
+    return queryParams;
+  }
+  function determineImageToShow(params) {
+    if (params.bedSize === "Queen" && params.budget === "3000" && params.theme === "Black") {
+      img.classList.remove("idm");
+      
+      return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";
+    }
+    // ... add other combinations
+  }
+  
+</script>
 </html>
