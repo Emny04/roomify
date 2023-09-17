@@ -12,58 +12,58 @@
 
 
 
-<body>
-    <div class="home-container">
-        <div data-role="Header" class="home-navbar-container">
-            <div class="home-navbar">
-              <div class="home-left-side">
-                <img
-                  alt="image"
-                  src="/images/logo/LogoV2.1.png"
-                  class="home-image"
-                />
-                <div data-role="BurgerMenu" class="home-burger-menu">
-                  <svg viewBox="0 0 1024 1024" class="home-icon">
-                    <path
-                      d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="home-links-container">
-                  <a href="#team" class="home-link Anchor">Team</a>
-                  <a href="#inspiration" class="home-link02 Anchor">inspiration</a>
-                  <a href="#aboutus" class="home-link01 Anchor">About us</a>
-                  <a href="#contactus" class="home-link02 Anchor">Contact us</a>
-                </div>
-              </div>
-              <div class="home-right-side">
-                <a href="index.html" class="home-cta-btn Anchor button">HOMEPAGE</a>
-            </div>
-              <div data-role="MobileMenu" class="home-mobile-menu">
-                <div class="home-container1">
-                  <img
-                    alt="image"
-                    src="image1.png"
-                    class="home-image1"
-                  />
+<div>
+  <link href="/css/home.css" rel="stylesheet" />
+  <div class="home-container">
+    <div data-role="Header" class="home-navbar-container">
+      <div class="home-navbar">
+        <div class="home-left-side">
+          <img
+            alt="image"
+            src="/images/logo/LogoV2.1.png"
+            class="home-image"
+          />
+          <div data-role="BurgerMenu" class="home-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="home-icon">
+              <path
+                d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
+              ></path>
+            </svg>
+          </div>
+          <div class="home-links-container">
+            <a href="#team" class="home-link Anchor">Team</a>
+            <a href="#purpose" class="home-link01 Anchor">purpose</a>
+            <a href="#contactus" class="home-link02 Anchor">Contact us</a>
+          </div>
+        </div>
+        <div class="home-right-side">
+          <a href="index.html" class="home-cta-btn Anchor button">HOMEPAGE</a>
+        </div>
+        <div data-role="MobileMenu" class="home-mobile-menu">
+          <div class="home-container1">
+            <img
+              alt="image"
+              src="image1.png"
+              class="home-image1"
+            />
 
-                  <div data-role="CloseMobileMenu" class="home-close-menu">
-                    <svg viewBox="0 0 1024 1024" class="home-icon02">
-                      <path
-                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="home-links-container1">
-                  <a href="#Team" class="home-link04 Anchor">Team</a>
-                  <a href="#inspiration" class="home-link02 Anchor">inspiration</a>
-                  <a href="#aboutus" class="home-link05 Anchor">About us</a>
-                  <a href="#contactus" class="home-link06 Anchor">Contact us</a>
-                </div>
-              </div>
+            <div data-role="CloseMobileMenu" class="home-close-menu">
+              <svg viewBox="0 0 1024 1024" class="home-icon02">
+                <path
+                  d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                ></path>
+              </svg>
             </div>
           </div>
+          <div class="home-links-container1">
+            <a href="#Team" class="home-link04 Anchor">Team</a>
+            <a href="#purpose" class="home-link05 Anchor">purpose</a>
+            <a href="#contactus" class="home-link06 Anchor">Contact us</a>
+            <a href="#ourstory" class="home-link07 Anchor">Our story</a>
+          </div>
+        </div>
+      </div>
+    </div>
           <img class="idm" id="l0" src= "/images/designs/image0.png" alt="Design Photo">
           <img class="idm" id="l1" src= "/images/designs/image1.png" alt="Design Photo">
           <img class="idm" id="l2" src= "images/designs/image2.png" alt="Design Photo">
@@ -118,7 +118,6 @@
     </div>
 </form>
 
-    <img id="selectedImage" src="" alt="Design Photo">
     <div class="home-section-separator3"></div>
     <div class="home-footer-container">
       <div class="home-footer">
@@ -146,7 +145,7 @@
 <script>
   const imgElement = document.getElementById('selectedImage');
   const params = getQueryParams();
-  const imagePath = determineImageToShow(params);
+  determineImageToShow(params);
   imgElement.src = imagePath;
   let currentStep = 1;
 
@@ -176,42 +175,42 @@
     if (params.bedSize ==="King" && params.theme === "Traditional" && params.windowsize === "Small"){
   var img = document.getElementById("l0");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="King" && params.theme === "Traditional" && params.windowsize === "Big"){
   var img = document.getElementById("l1");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="King" && params.theme === "Modern" && params.windowsize === "Small"){
   var img = document.getElementById("l2");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="King" && params.theme === "Modern" && params.windowsize === "Big"){
   var img = document.getElementById("l3");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="Single" && params.theme === "Traditional" && params.windowsize === "Small"){
   var img = document.getElementById("l4");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="Single" && params.theme === "Traditional" && params.windowsize === "Big"){
   var img = document.getElementById("l5");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="Single" && params.theme === "Modern" && params.windowsize === "Small"){
   var img = document.getElementById("l6");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 if (params.bedSize ==="Single" && params.theme === "Modern" && params.windowsize === "Big"){
   var img = document.getElementById("l7");
 img.classList.remove("idm");
-return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+ }
 
 
     }

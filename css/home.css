@@ -155,7 +155,7 @@
   padding-bottom: var(--dl-space-space-tenunits);
   background-size: cover;
   justify-content: center;
-  background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
+  background-image: url("/images/designs/collage.png");
   background-repeat: no-repeat;
   background-position: center;
 }
