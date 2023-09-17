@@ -73,6 +73,22 @@
           <img class="idm" id="l6" src= "images/designs/image6.png" alt="Design Photo">
           <img class="idm" id="l7" src= "images/designs/image7.png" alt="Design Photo">
   <form id="surveyForm">
+    <div class="step" id="step1">
+      <h2>Step 1: Personal Information</h2>
+      <label for="firstName">First Name:</label>
+      <input placeholder="Jonh" type="text" name="firstName" id="firstName" >
+
+      <label for="lastName">Last Name:</label>
+      <input placeholder="Brown" type="text" name="lastName" id="lastName" >
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{10}" placeholder="+1234567890" >
+
+      <label for="email">Email:</label>
+      <input placeholder="example@gmail.com" type="email" name="email" id="email" >
+
+      <button type="button" onclick="nextStep(1)">Next</button>
+  </div>
     <div class="step" id="step2">
         <h2>Step 2: Preferences</h2>
         
