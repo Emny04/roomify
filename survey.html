@@ -60,14 +60,18 @@
                   <a href="#inspiration" class="home-link02 Anchor">inspiration</a>
                   <a href="#aboutus" class="home-link05 Anchor">About us</a>
                   <a href="#contactus" class="home-link06 Anchor">Contact us</a>
-                  <a href="#ourstory" class="home-link07 Anchor">Our story</a>
                 </div>
               </div>
             </div>
           </div>
-          <img class="idm" id="lol" src="images/image1.png" alt="Chosen bed image">
-          <img class="idm" id="lol1" src="images/image2.png" alt="Chosen bed image">
-
+          <img class="idm" id="l0" src= "images/image0.png" alt="Design Photo">
+          <img class="idm" id="l1" src= "images/image1.png" alt="Design Photo">
+          <img class="idm" id="l2" src= "images/image2.png" alt="Design Photo">
+          <img class="idm" id="l3" src= "images/image3.png" alt="Design Photo">
+          <img class="idm" id="l4" src= "images/image4.png" alt="Design Photo">
+          <img class="idm" id="l5" src= "images/image5.png" alt="Design Photo">
+          <img class="idm" id="l6" src= "images/image6.png" alt="Design Photo">
+          <img class="idm" id="l7" src= "images/image7.png" alt="Design Photo">
   <form id="surveyForm">
     <div class="step" id="step2">
         <h2>Step 2: Preferences</h2>
@@ -75,26 +79,46 @@
         <!-- Bed size input -->
         <label for="bedSize">Bed Size:</label>
         <select name="bedSize" id="bedSize">
-            <option value="Queen">Queen</option>
             <option value="King">King</option>
+            <option value="Single">Single</option>
         </select>
-        
-        <!-- Budget input -->
-        <label for="budget">Budget:</label>
-        <input type="number" name="budget" id="budget" placeholder="Enter your budget">
+        <label for="personality">Are you an introvert or an extrovert?</label>
+<select name="personality" id="personality">
+    <option value="Introvert">Introvert</option>
+    <option value="Extrovert">Extrovert</option>
+</select>
+
+<label for="morningOrNight">Are you a morning person or a night person?</label>
+<select name="morningOrNight" id="morningOrNight">
+    <option value="Morning">Morning person</option>
+    <option value="Night">Night person</option>
+</select>
+
+<label for="energyLevel">Are you energetic or calm?</label>
+<select name="energyLevel" id="energyLevel">
+    <option value="Energetic">Energetic</option>
+    <option value="Calm">Calm</option>
+</select>
+
         
         <!-- Theme input -->
         <label for="theme">Choose Theme:</label>
         <select name="theme" id="theme">
-            <option value="Black">Black</option>
-            <option value="White">White</option>
+            <option value="Traditional">Traditional</option>
+            <option value="Modern">Modern</option>
         </select>
+        <label for="windowsize">Window Size:</label>
+<select name="windowsize" id="windowsize">
+    <option value="Small">Small</option>
+    <option value="Big">Big</option>
+</select>
+
 
         <button type="submit">Submit</button>
     </div>
 </form>
 
-    <img id="selectedImage" src="" alt="Chosen bed image">
+    <img id="selectedImage" src="" alt="Design Photo">
     <div class="home-section-separator3"></div>
     <div class="home-footer-container">
       <div class="home-footer">
@@ -124,7 +148,6 @@
   const params = getQueryParams();
   const imagePath = determineImageToShow(params);
   imgElement.src = imagePath;
-  var img = document.getElementById("lol");
   let currentStep = 1;
 
   function nextStep(step) {
@@ -149,13 +172,50 @@
     return queryParams;
   }
   function determineImageToShow(params) {
-    if (params.bedSize === "Queen" && params.budget === "3000" && params.theme === "Black") {
-      img.classList.remove("idm");
-      
-      return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";
+
+    if (params.bedSize ==="King" && params.theme === "Traditional" && params.windowsize === "Small"){
+  var img = document.getElementById("l0");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="King" && params.theme === "Traditional" && params.windowsize === "Big"){
+  var img = document.getElementById("l1");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="King" && params.theme === "Modern" && params.windowsize === "Small"){
+  var img = document.getElementById("l2");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="King" && params.theme === "Modern" && params.windowsize === "Big"){
+  var img = document.getElementById("l3");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="Single" && params.theme === "Traditional" && params.windowsize === "Small"){
+  var img = document.getElementById("l4");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="Single" && params.theme === "Traditional" && params.windowsize === "Big"){
+  var img = document.getElementById("l5");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="Single" && params.theme === "Modern" && params.windowsize === "Small"){
+  var img = document.getElementById("l6");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+if (params.bedSize ==="Single" && params.theme === "Modern" && params.windowsize === "Big"){
+  var img = document.getElementById("l7");
+img.classList.remove("idm");
+return "/Users/erensonmez/Desktop/roomify-no-be/images/image1.png";}
+
+
     }
     // ... add other combinations
-  }
   
 </script>
 </html>
